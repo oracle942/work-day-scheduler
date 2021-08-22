@@ -1,3 +1,9 @@
 var today = moment();
-$("#currentday").text(today.format("MMM Do, YYYY"));
-console.log(today.format("MMM Do, YYYY"))
+var currentDay = $('#currentDay')
+var text = localStorage.getItem("text")
+
+$(currentDay).text(today.format("MMM Do, YYYY"));
+
+
+
+
