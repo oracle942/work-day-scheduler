@@ -8,6 +8,8 @@ This application provides an easy work-day sheduling interface.
 
 This project provided an opportunity to learn Bootstrap syle applications, jQuery applications, and continue to improve the author's understanding of iterators, arrays, and for loops.
 
+![Application Screenshot](Screenshot.PNG)
+
 ## Usage
 To use this scheduler simply begin typing into one of the text areas. When finished loggin an entry, click on the right-hand 'save' button to save your progress.
 
