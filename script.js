@@ -1,11 +1,16 @@
-  
+// Global Variable Declarations
 var today = moment();
 var currentDay = $('#currentDay')
 var object = document.querySelectorAll('textarea')
 var array = Array.from(object)
+
+// Set current day on Jumbotron
 $(currentDay).text(today.format("MMM Do, YYYY"));
+
+// Begin Interval to check for time and set styling accordingly
 setInterval(timeCheck(), 1000)
 
+// Button Declarations
 var saveBtn = $('.saveBtn')
 var saveBtn2 = $('.saveBtn2')
 var saveBtn3 = $('.saveBtn3')
@@ -16,6 +21,7 @@ var saveBtn7 = $('.saveBtn7')
 var saveBtn8 = $('.saveBtn8')
 var saveBtn9 = $('.saveBtn9')
 
+// Set local storage 
 var localText = localStorage.getItem("storedText")
 var localText2 = localStorage.getItem("storedText2")
 var localText3 = localStorage.getItem("storedText3")
@@ -26,6 +32,8 @@ var localText7 = localStorage.getItem("storedText7")
 var localText8 = localStorage.getItem("storedText8")
 var localText9 = localStorage.getItem("storedText9")
 
+
+// Saves each entry as a placeholder for display on page refresh
 $('.text-input').attr('placeholder', localText);
 // This is meant to add the local storage item via textContent.
 // This is the intended method, but error occurs for unknown reasons.
@@ -41,6 +49,8 @@ $('.text-input8').attr('placeholder', localText8);
 $('.text-input9').attr('placeholder', localText9);
 
 
+
+// Save button functionality
 saveBtn.on("click", function(){ 
     var savedText = $('.text-input')
     localStorage.setItem("storedText", savedText.val());
