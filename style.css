@@ -2,13 +2,29 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
+  
   }
+
+  .text-input1::placeholder  {
+    font-family: 'Open Sans', sans-serif;
+    color:#000000;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .text-input1{
+    font-family: 'Open Sans', sans-serif;
+    color:#000000;
+    font-size: 20px;
+    line-height: 1;
+  }
+  
   
   textarea {
     background: transparent;
     border: none;
     resize: none;
-    color: #000000;
+    color:black;
     border-left: 1px solid black;
     padding: 10px;
   }

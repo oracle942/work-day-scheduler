@@ -1,19 +1,20 @@
 var today = moment();
 var currentDay = $('#currentDay')
-var textInput1 = $('.text-input1').text()
+var textInput1 = document.getElementById(".text-input1")
 var save1Btn = $('.saveBtn')
 var localText1 = localStorage.getItem("storedText1")
-var storedText1
 
-textInput1 = localText1
+// $('.text-input1').attr('placeholder', localText1);
+$('.text-input1').attr('textContent', localText1);
 
+console.log(textInput1)
 $(currentDay).text(today.format("MMM Do, YYYY"));
 
 save1Btn.on("click", function(){ 
-    var storedText1 = $('.text-input1').text()
-    localStorage.setItem("storedText1", storedText1);
-    console.log(storedText1)
+    var savedText1 = $('.text-input1')
+    localStorage.setItem("storedText1", savedText1.val());
+   
 });
 
 
-console.log($('.text-input1').text())
+// console.log($('.text-input1').text())
