@@ -1,9 +1,10 @@
   
 var today = moment();
 var currentDay = $('#currentDay')
+var object = document.querySelectorAll('textarea')
+var array = Array.from(object)
 $(currentDay).text(today.format("MMM Do, YYYY"));
-var g = setInterval(timeCheck(), 1000)
-console.log(g)
+setInterval(timeCheck(), 1000)
 
 var saveBtn = $('.saveBtn')
 var saveBtn2 = $('.saveBtn2')
@@ -98,39 +99,19 @@ saveBtn9.on("click", function(){
 
 
 // This function runs in the interval initialized above and assigns styling to each row according to the current time
+
 function timeCheck () {
-    var object = document.querySelectorAll('textarea')
-    var array = Array.from(object)
+  
+    for(i = 0; i < array.length; i++){  
 
-    for (let i = 0; i < array.length; i++){
-        function y () {
-             var x = $('textarea').attr('id');
+        if(array[i]['id'] === today.format("H")){
+            $(array[i]['id']).attr('class', 'text-input form-control present');}
+
+           else if(array[i]['id'] < today.format("H")){
+           $(array[i]['id']).attr('class', 'text-input form-control past');}
+
+           else{
+           $(array[i]['id']).attr('class', 'text-input form-control future');}
     
-            if(x === today.format("H")){
-             $('.text-input').attr('class', 'text-input form-control present');}
-
-            if(x < today.format("H")){
-            $('.text-input').attr('class', 'text-input form-control past');}
-
-                if(x > today.format("H")){
-            $('.text-input').attr('class', 'text-input form-control future');}
-            
-        }
     }
 }
-
-    
-
-
-
-
-
-
-// $('.text-input').removeAttr('class', 'past');
-// $('.text-input').Attr('class', 'past');
-// $('.text-input').removeAttr('class', 'present');
-// $('.text-input').Attr('class', 'present');
-// $('.text-input').removeAttr('class', 'future');
-// $('.text-input').Attr('class', 'future');
-
-
