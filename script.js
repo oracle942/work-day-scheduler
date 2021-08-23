@@ -99,3 +99,30 @@ saveBtn9.on("click", function(){
 
 
 console.log(today.format("H"))
+// $('.text-input').attr('class', 'text-input form-control present');
+
+var x = $('.text-input').attr('id');
+// var x = today.format("H")
+console.log(x);
+
+function y () {
+    if(x === today.format("H")){
+    $('.text-input').attr('class', 'text-input form-control present');
+}
+}
+
+y();
+
+
+
+
+
+
+// $('.text-input').removeAttr('class', 'past');
+// $('.text-input').Attr('class', 'past');
+// $('.text-input').removeAttr('class', 'present');
+// $('.text-input').Attr('class', 'present');
+// $('.text-input').removeAttr('class', 'future');
+// $('.text-input').Attr('class', 'future');
+
+
