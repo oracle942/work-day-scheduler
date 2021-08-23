@@ -8,7 +8,8 @@ var array = Array.from(object)
 $(currentDay).text(today.format("MMM Do, YYYY"));
 
 // Begin Interval to check for time and set styling accordingly
-setInterval(timeCheck(), 1000)
+var interval = setInterval(timeCheck(), 1000)
+console.log(interval)
 
 // Button Declarations
 var saveBtn = $('.saveBtn')
@@ -38,7 +39,7 @@ $('.text-input').attr('placeholder', localText);
 // This is meant to add the local storage item via textContent.
 // This is the intended method, but error occurs for unknown reasons.
 // If functional, the following line of code would repeat
-// $('.text-input').attr('textContent', localText);
+$('.text-input').attr('textContent', localText);
 $('.text-input2').attr('placeholder', localText2);
 $('.text-input3').attr('placeholder', localText3);
 $('.text-input4').attr('placeholder', localText4);
@@ -112,20 +113,26 @@ saveBtn9.on("click", function(){
 
 function timeCheck () {
   
-    for(i = 0; i < array.length; i++){  
-
-        if(array[i]['id'] === today.format("H")){
+    for(var i = 0; i < array.length; i++){  
+            console.log(array[i]['id'])
+        console.log(today.format("H"))
+            if(parseInt(array[i]['id']) === parseInt(today.format("H"))){
             array[i].classList.add('present')}
 
-           else if(array[i]['id'] < today.format("H")){
+
+
+           else if(parseInt(array[i]['id']) < parseInt(today.format("H"))){
             array[i].classList.add('past')}
 
-           else{
-            array[i].classList.add('future')}
+            else if(parseInt(array[i]['id'])  > parseInt(today.format("H"))){
+                array[i].classList.add('future')}
     
     }
        
 
 }
-var i = 0
-console.log(array[i].classList)
+// i = 0
+// console.log(today.format("H"))
+// // console.log(array[i]['id'])
+// var i = 0
+// console.log(array[i].classList)
