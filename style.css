@@ -6,7 +6,15 @@ body {
   }
 
   .text-input::placeholder,  
-  .text-input2::placeholder  {
+  .text-input2::placeholder,  
+  .text-input3::placeholder,  
+  .text-input4::placeholder,  
+  .text-input5::placeholder,  
+  .text-input6::placeholder,  
+  .text-input7::placeholder,  
+  .text-input8::placeholder,  
+  .text-input9::placeholder
+  {
     font-family: 'Open Sans', sans-serif;
     color:#000000;
     font-size: 16px;
@@ -75,7 +83,15 @@ body {
   }
   
   .saveBtn, 
-  .saveBtn2 {
+  .saveBtn2, 
+  .saveBtn3,
+  .saveBtn4,
+  .saveBtn5,
+  .saveBtn6,
+  .saveBtn7,
+  .saveBtn8,
+  .saveBtn9
+  {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -84,7 +100,15 @@ body {
   }
   
   .saveBtn:hover, 
-  .saveBtn2:hover {
+  .saveBtn2:hover,
+  .saveBtn3:hover, 
+  .saveBtn4:hover, 
+  .saveBtn5.hour, 
+  .saveBtn6:hover, 
+  .saveBtn7:hover, 
+  .saveBtn8:hover, 
+  .saveBtn9:hover
+  {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
