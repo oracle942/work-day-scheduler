@@ -2,7 +2,8 @@
 var today = moment();
 var currentDay = $('#currentDay')
 $(currentDay).text(today.format("MMM Do, YYYY"));
-
+var g = setInterval(timeCheck(), 1000)
+console.log(g)
 
 var saveBtn = $('.saveBtn')
 var saveBtn2 = $('.saveBtn2')
@@ -27,7 +28,7 @@ var localText9 = localStorage.getItem("storedText9")
 $('.text-input').attr('placeholder', localText);
 // This is meant to add the local storage item via textContent.
 // This is the intended method, but error occurs for unknown reasons.
-// If functional, this line of code would repeat
+// If functional, the following line of code would repeat
 // $('.text-input').attr('textContent', localText);
 $('.text-input2').attr('placeholder', localText2);
 $('.text-input3').attr('placeholder', localText3);
@@ -96,22 +97,29 @@ saveBtn9.on("click", function(){
 });
 
 
+// This function runs in the interval initialized above and assigns styling to each row according to the current time
+function timeCheck () {
+    var object = document.querySelectorAll('textarea')
+    var array = Array.from(object)
 
+    for (let i = 0; i < array.length; i++){
+        function y () {
+             var x = $('textarea').attr('id');
+    
+            if(x === today.format("H")){
+             $('.text-input').attr('class', 'text-input form-control present');}
 
-console.log(today.format("H"))
-// $('.text-input').attr('class', 'text-input form-control present');
+            if(x < today.format("H")){
+            $('.text-input').attr('class', 'text-input form-control past');}
 
-var x = $('.text-input').attr('id');
-// var x = today.format("H")
-console.log(x);
-
-function y () {
-    if(x === today.format("H")){
-    $('.text-input').attr('class', 'text-input form-control present');
+                if(x > today.format("H")){
+            $('.text-input').attr('class', 'text-input form-control future');}
+            
+        }
+    }
 }
-}
 
-y();
+    
 
 
 
