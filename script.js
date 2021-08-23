@@ -115,13 +115,17 @@ function timeCheck () {
     for(i = 0; i < array.length; i++){  
 
         if(array[i]['id'] === today.format("H")){
-            $(array[i]['id']).attr('class', 'text-input form-control present');}
+            array[i].classList.add('present')}
 
            else if(array[i]['id'] < today.format("H")){
-           $(array[i]['id']).attr('class', 'text-input form-control past');}
+            array[i].classList.add('past')}
 
            else{
-           $(array[i]['id']).attr('class', 'text-input form-control future');}
+            array[i].classList.add('future')}
     
     }
+       
+
 }
+var i = 0
+console.log(array[i].classList)
